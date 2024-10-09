@@ -18,7 +18,7 @@ class LoadLotusModel:
     def INPUT_TYPES(s):
         return {
             "required": {
-                "model": (folder_paths.get_filename_list("diffusion_models"), ),
+                "model": (folder_paths.get_filename_list("diffusion_models"),{"tooltip":"models are loaded from 'ComfyUI/models/diffusion_models'"}),
             },
             "optional": {
                 "precision": (["fp16", "fp32",],
