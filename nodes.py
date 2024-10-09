@@ -21,7 +21,7 @@ class LoadLotusModel:
                 "model": (folder_paths.get_filename_list("diffusion_models"), ),
             },
             "optional": {
-                "precision": (["fp16", "fp32", "bf16"],
+                "precision": (["fp16", "fp32",],
                     {"default": "fp16"}
                 ),
             }
@@ -139,7 +139,7 @@ class LotusSampler:
 NODE_CLASS_MAPPINGS = {
     "LoadLotusModel": LoadLotusModel,
     "LotusSampler": LotusSampler,
-}
+    }
 NODE_DISPLAY_NAME_MAPPINGS = {
     "LoadLotusModel": "Load Lotus Model",
     "LotusSampler": "Lotus Sampler",
