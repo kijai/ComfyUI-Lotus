@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-lotus"
+description = "ComfyUI nodes to use Lotus depth/normal prediction.\nNOTE:The necessary models can be downloaded from ComfyUI-Manager."
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["diffusers"]
+
+[project.urls]
+Repository = "https://github.com/kijai/ComfyUI-Lotus"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-Lotus"
+Icon = ""
