@@ -37,9 +37,11 @@ class LoadLotusModel:
         dtype = {"bf16": torch.bfloat16, "fp16": torch.float16, "fp32": torch.float32}[precision]
         mm.soft_empty_cache()
 
-        lotus_model_path = folder_paths.get_full_path_or_raise("diffusion_models", model)
+        model_path = folder_paths.get_full_path("diffusion_models", model)
+        if not model_path or not os.path.exists(model_path):
+            raise FileNotFoundError(f"Model file not found: {model}")
         
-        lotus_sd = load_torch_file(lotus_model_path)
+        lotus_sd = load_torch_file(model_path)
         in_channels = lotus_sd['conv_in.weight'].shape[1]
         lotus_config = os.path.join(script_directory, "configs", "lotus_unet_config.json")
 
